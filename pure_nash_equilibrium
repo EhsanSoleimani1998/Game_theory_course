@@ -1,0 +1,40 @@
+clc
+clear all
+close all
+
+a= input ( 'Enter a Zero-Sum Matrix: ');
+% a= [100 50 5; 50 30 10; 25 20 15];
+%  a= [ -4 11 3 -2 4; -7 0 2 1 7; 3 2 -5 14 -4; -3 8 1 -4 -1]
+%a= [ -4 11 3 -2 4; -7 0 2 1 73; 3 2 -5 7 -4; -3 8 3 -6 -1]
+
+maxa1=max(a);
+minmax=min(maxa1);
+d=find ( maxa1==minmax );
+disp('security level of P1 (Maximizer) is : ')
+disp (minmax)
+disp ('security policy of P1 (Maximizer) is : ')
+disp(d)
+
+mina1=min(a');
+maxmin=max (mina1);
+b= find ( maxmin==mina1 );
+disp('security level of P2 (minimizer) is : ')
+disp(maxmin)
+disp('security policy of P2 (minimizer) is : ')
+disp(b)
+
+if minmax==maxmin
+    disp ('saddle-point equilibrium is: ')
+    c=[ '(',num2str(b),',',num2str(d),')'];
+    disp (c)
+    disp ('saddle-point value is: ')
+    disp (minmax)
+else
+    disp ('there is no saddle-point equilibriums!')
+end
+
+
+    
+
+
+
